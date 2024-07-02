@@ -1,9 +1,14 @@
+import { Props } from "next/script"
 import styles from "./button.module.css"
 
-export function button(){
-    return(
-        <div className={styles.conteiner}>
+type prop = {
+    title: string
+    onChlick?:() => void
+    clasName?:'center'
+}
 
-        </div>
+export function Button(Props:prop){   
+    return(
+        <input type="button" value={Props.title} className={`${styles.defoult} ${Props.clasName == 'center'?styles.center:''}`} onChange={Props.onChlick}/>
     )
 }

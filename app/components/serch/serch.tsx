@@ -1,7 +1,11 @@
 import styles from "./serch.module.css"
 
-export function Serch(){
+type props = {
+    onchange?:() => void
+}
+
+export function Serch(prop:props){
     return(
-        <input type="serch" className={styles.input} placeholder="serch"/>
+        <input type="serch" className={styles.input} placeholder="serch" onChange={prop.onchange}/>
     )
 }
